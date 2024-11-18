@@ -10,3 +10,7 @@ redis.conf
 app/mlartifacts/
 app/mlruns
 tests/
+.DS_Store
+.json
+.bin
+.bkp
