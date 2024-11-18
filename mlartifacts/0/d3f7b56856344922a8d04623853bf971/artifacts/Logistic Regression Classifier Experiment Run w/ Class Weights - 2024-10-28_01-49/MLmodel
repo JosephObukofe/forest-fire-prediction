@@ -1,0 +1,20 @@
+artifact_path: Logistic Regression Classifier Experiment Run w/ Class Weights - 2024-10-28_01-49
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.12.7
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.5.2
+mlflow_version: 2.17.0
+model_size_bytes: 1423
+model_uuid: ce4a539955df4fd7a33dc0bc341f623e
+run_id: d3f7b56856344922a8d04623853bf971
+utc_time_created: '2024-10-28 00:49:34.911996'

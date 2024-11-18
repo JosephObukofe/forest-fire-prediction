@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/0/7e733b08247148578ef03515b251ea89/artifacts
+deleted_time: 1730456378062
+end_time: 1730455565128
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: 7e733b08247148578ef03515b251ea89
+run_name: Multi-Layer Perceptron Classifier Experiment Run - 2024-11-01_11-06
+run_uuid: 7e733b08247148578ef03515b251ea89
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1730455565012
+status: 4
+tags: []
+user_id: josephobukofe

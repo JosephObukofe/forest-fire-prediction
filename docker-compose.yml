@@ -1,0 +1,87 @@
+version: "3.9"
+
+services:
+  minio:
+    image: minio/minio:latest
+    container_name: minio
+    environment:
+      - MINIO_ROOT_USER=${MINIO_ROOT_USER}
+      - MINIO_ROOT_PASSWORD=${MINIO_ROOT_PASSWORD}
+      - MINIO_BUCKET=${MINIO_BUCKET}
+      - MINIO_OBJECT_NAME=${MINIO_OBJECT_NAME}
+    ports:
+      - "9278:9278"
+    volumes:
+      - ./data/raw/minio:/data
+    networks:
+      - predicting_forest_fires_app_network
+    command: minio server /data --address ":9278" > /dev/null 2>&1
+    
+  redis:
+    image: redis:alpine3.20
+    container_name: redis
+    environment:
+      - REDIS_PORT=${REDIS_PORT}
+      - REDIS_HOST_NAME=${REDIS_HOST_NAME}
+      - REDIS_PASSWORD=${REDIS_DB_PASSWORD}
+    ports:
+      - "${REDIS_PORT}:6379"
+    networks:
+      - predicting_forest_fires_app_network
+    command: redis-server \
+      --requirepass "${REDIS_DB_PASSWORD}" \
+      --bind 127.0.0.1
+
+  mlflow:
+    image: bitnami/mlflow:latest
+    container_name: mlflow
+    environment:
+      - MLFLOW_TRACKING_URI=http://127.0.0.1:5000
+    ports:
+      - "5000:5000"
+    volumes:
+      - /mlruns:/mlruns
+      - /mlartifacts:/mlartifacts
+    networks:
+      - predicting_forest_fires_app_network
+    command: mlflow server \
+      --backend-store-uri /mlruns \
+      --default-artifact-root /mlartifacts \
+      --host 127.0.0.1 \
+      --port 5000
+
+  fastapi:
+    build:
+      context: .
+      dockerfile: ./app/fastapi/Dockerfile.fastapi-celery
+    container_name: fastapi
+    environment:
+      - REDIS_PORT=${REDIS_PORT}
+      - REDIS_HOST_NAME=${REDIS_HOST_NAME}
+      - REDIS_PASSWORD=${REDIS_DB_PASSWORD}
+    ports:
+      - "8001:8001"
+    networks:
+      - predicting_forest_fires_app_network
+    depends_on:
+      - minio
+      - redis
+      - mlflow
+    command: bash app.sh
+
+  streamlit:
+    build:
+      context: .
+      dockerfile: ./app/streamlit/Dockerfile.streamlit
+    container_name: streamlit
+    ports:
+      - "8501:8501"
+    networks:
+      - predicting_forest_fires_app_network
+    depends_on:
+      - fastapi
+    command: bash app.sh
+   
+networks:
+  predicting_forest_fires_app_network:
+    driver: bridge

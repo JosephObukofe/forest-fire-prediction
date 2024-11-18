@@ -1,0 +1,12 @@
+.env
+dump.rdb
+poetry.lock
+pyproject.toml
+>/
+__pycache__/
+utils/
+keys/
+redis.conf
+app/mlartifacts/
+app/mlruns
+tests/

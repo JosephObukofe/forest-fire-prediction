@@ -1,0 +1,20 @@
+aliases: []
+creation_timestamp: 1730456522022
+current_stage: None
+description: 'Random Forest Classifier for Forest Fire Predictions with best parameters:
+  {''bootstrap'': True, ''ccp_alpha'': 0.0, ''class_weight'': ''balanced_subsample'',
+  ''criterion'': ''entropy'', ''max_depth'': 50, ''max_features'': ''sqrt'', ''max_leaf_nodes'':
+  None, ''max_samples'': None, ''min_impurity_decrease'': 0.0, ''min_samples_leaf'':
+  1, ''min_samples_split'': 2, ''min_weight_fraction_leaf'': 0.0, ''monotonic_cst'':
+  None, ''n_estimators'': 495, ''n_jobs'': None, ''oob_score'': False, ''random_state'':
+  42, ''verbose'': 0, ''warm_start'': False}. '
+last_updated_timestamp: 1730456522032
+name: Forest Fire Random Forest Classifier
+run_id: f722dc721ee94cd4a6055807ac605601
+run_link: ''
+source: mlflow-artifacts:/0/f722dc721ee94cd4a6055807ac605601/artifacts/Random%20Forest%20Classifier%20Experiment%20Run%20-%202024-11-01_11-17
+status: READY
+status_message: null
+storage_location: mlflow-artifacts:/0/f722dc721ee94cd4a6055807ac605601/artifacts/Random%20Forest%20Classifier%20Experiment%20Run%20-%202024-11-01_11-17
+user_id: null
+version: 2

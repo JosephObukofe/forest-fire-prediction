@@ -1,0 +1,6 @@
+artifact_location: file:///Users/josephobukofe/predicting_forest_fires/mlruns/417460508306897065
+creation_time: 1729988363778
+experiment_id: '417460508306897065'
+last_update_time: 1729988363778
+lifecycle_stage: active
+name: 'Forest Fire Prediction: Model Validation'

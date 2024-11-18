@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1730076645295
+current_stage: Staging
+description: ''
+last_updated_timestamp: 1730076645311
+name: Forest Fire Decision Tree Classifier
+run_id: 146f154cf44a433fb10de181a96a5d76
+run_link: ''
+source: mlflow-artifacts:/0/146f154cf44a433fb10de181a96a5d76/artifacts/Decision%20Tree%20Classifier%20Experiment%20Run%20-%202024-10-28_01-49
+status: READY
+status_message: null
+storage_location: mlflow-artifacts:/0/146f154cf44a433fb10de181a96a5d76/artifacts/Decision%20Tree%20Classifier%20Experiment%20Run%20-%202024-10-28_01-49
+user_id: null
+version: 2

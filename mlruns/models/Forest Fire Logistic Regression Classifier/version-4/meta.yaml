@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1730103211868
+current_stage: Staging
+description: ''
+last_updated_timestamp: 1730103211890
+name: Forest Fire Logistic Regression Classifier
+run_id: 8bad170cfe024aceafb262da9603e14e
+run_link: ''
+source: mlflow-artifacts:/0/8bad170cfe024aceafb262da9603e14e/artifacts/Logistic%20Regression%20Classifier%20Experiment%20Run%20w/%20Class%20Weights%20-%202024-10-28_09-13
+status: READY
+status_message: null
+storage_location: mlflow-artifacts:/0/8bad170cfe024aceafb262da9603e14e/artifacts/Logistic%20Regression%20Classifier%20Experiment%20Run%20w/%20Class%20Weights%20-%202024-10-28_09-13
+user_id: null
+version: 4

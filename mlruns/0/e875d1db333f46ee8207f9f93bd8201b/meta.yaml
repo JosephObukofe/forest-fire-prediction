@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/0/e875d1db333f46ee8207f9f93bd8201b/artifacts
+deleted_time: 1730456378112
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: e875d1db333f46ee8207f9f93bd8201b
+run_name: Random Forest Classifier Experiment Run - 2024-11-01_09-44
+run_uuid: e875d1db333f46ee8207f9f93bd8201b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1730450668551
+status: 1
+tags: []
+user_id: josephobukofe

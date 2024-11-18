@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1730077258989
+current_stage: Staging
+description: ''
+last_updated_timestamp: 1730077259000
+name: Forest Fire MLP Classifier
+run_id: 05f2d542a39d4e89b3fa27ee5123d107
+run_link: ''
+source: mlflow-artifacts:/0/05f2d542a39d4e89b3fa27ee5123d107/artifacts/Multi-Layer%20Perceptron%20Classifier%20Experiment%20Run%20-%202024-10-28_01-49
+status: READY
+status_message: null
+storage_location: mlflow-artifacts:/0/05f2d542a39d4e89b3fa27ee5123d107/artifacts/Multi-Layer%20Perceptron%20Classifier%20Experiment%20Run%20-%202024-10-28_01-49
+user_id: null
+version: 2

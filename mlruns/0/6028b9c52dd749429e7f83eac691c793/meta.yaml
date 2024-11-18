@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/6028b9c52dd749429e7f83eac691c793/artifacts
+end_time: 1730386540110
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6028b9c52dd749429e7f83eac691c793
+run_name: Decision Tree Classifier Experiment Run - 2024-10-31_15-55
+run_uuid: 6028b9c52dd749429e7f83eac691c793
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1730386508203
+status: 3
+tags: []
+user_id: josephobukofe

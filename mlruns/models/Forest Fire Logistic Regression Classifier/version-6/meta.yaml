@@ -1,0 +1,18 @@
+aliases: []
+creation_timestamp: 1730456232972
+current_stage: None
+description: 'Logistic Regression Classifier for Forest Fire Predictions with best
+  parameters: {''C'': 0.001, ''class_weight'': {0: 1, 1: 5}, ''dual'': False, ''fit_intercept'':
+  True, ''intercept_scaling'': 1, ''l1_ratio'': None, ''max_iter'': 1000, ''multi_class'':
+  ''deprecated'', ''n_jobs'': None, ''penalty'': ''l2'', ''random_state'': 42, ''solver'':
+  ''saga'', ''tol'': 0.0001, ''verbose'': 0, ''warm_start'': False}. '
+last_updated_timestamp: 1730456233033
+name: Forest Fire Logistic Regression Classifier
+run_id: eb14cb9f8a4f4fd9bdc797bb2851a8a4
+run_link: ''
+source: mlflow-artifacts:/0/eb14cb9f8a4f4fd9bdc797bb2851a8a4/artifacts/Logistic%20Regression%20Classifier%20Experiment%20Run%20w/%20Class%20Weights%20-%202024-11-01_11-17
+status: READY
+status_message: null
+storage_location: mlflow-artifacts:/0/eb14cb9f8a4f4fd9bdc797bb2851a8a4/artifacts/Logistic%20Regression%20Classifier%20Experiment%20Run%20w/%20Class%20Weights%20-%202024-11-01_11-17
+user_id: null
+version: 6

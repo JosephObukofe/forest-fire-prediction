@@ -1,0 +1,18 @@
+aliases: []
+creation_timestamp: 1730386540054
+current_stage: None
+description: 'Decision Tree Classifier for Forest Fire Predictions with best parameters:
+  {''ccp_alpha'': 0.0, ''class_weight'': ''balanced'', ''criterion'': ''entropy'',
+  ''max_depth'': 20, ''max_features'': ''sqrt'', ''max_leaf_nodes'': None, ''min_impurity_decrease'':
+  0.0, ''min_samples_leaf'': 4, ''min_samples_split'': 20, ''min_weight_fraction_leaf'':
+  0.0, ''monotonic_cst'': None, ''random_state'': 42, ''splitter'': ''best''}. '
+last_updated_timestamp: 1730386540068
+name: Forest Fire Decision Tree Classifier
+run_id: 6028b9c52dd749429e7f83eac691c793
+run_link: ''
+source: mlflow-artifacts:/0/6028b9c52dd749429e7f83eac691c793/artifacts/Decision%20Tree%20Classifier%20Experiment%20Run%20-%202024-10-31_15-55
+status: READY
+status_message: null
+storage_location: mlflow-artifacts:/0/6028b9c52dd749429e7f83eac691c793/artifacts/Decision%20Tree%20Classifier%20Experiment%20Run%20-%202024-10-31_15-55
+user_id: null
+version: 5

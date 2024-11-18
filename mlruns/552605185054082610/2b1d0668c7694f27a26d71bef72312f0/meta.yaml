@@ -1,0 +1,16 @@
+artifact_uri: file:///Users/josephobukofe/predicting_forest_fires/mlruns/552605185054082610/2b1d0668c7694f27a26d71bef72312f0/artifacts
+deleted_time: 1729988634594
+end_time: 1729988460981
+entry_point_name: ''
+experiment_id: '552605185054082610'
+lifecycle_stage: deleted
+run_id: 2b1d0668c7694f27a26d71bef72312f0
+run_name: Model Evaluation Operation Run
+run_uuid: 2b1d0668c7694f27a26d71bef72312f0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1729988460112
+status: 4
+tags: []
+user_id: josephobukofe

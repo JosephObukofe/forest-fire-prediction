@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1730460326784
+current_stage: Deleted_Internal
+description: ''
+last_updated_timestamp: 1730460549140
+name: Forest Fire Random Forest Classifier
+run_id: f722dc721ee94cd4a6055807ac605601
+run_link: ''
+source: models:/Forest Fire Random Forest Classifier/2
+status: READY
+status_message: null
+storage_location: mlflow-artifacts:/0/f722dc721ee94cd4a6055807ac605601/artifacts/Random%20Forest%20Classifier%20Experiment%20Run%20-%202024-11-01_11-17
+user_id: null
+version: 3

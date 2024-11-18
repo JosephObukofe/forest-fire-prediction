@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/0/1480e9c3f18b46d3b78a0a20088dc794/artifacts
+deleted_time: 1730103166986
+end_time: 1730102791695
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: 1480e9c3f18b46d3b78a0a20088dc794
+run_name: Logistic Regression Classifier Experiment Run w/ Class Weights - 2024-10-28_09-06
+run_uuid: 1480e9c3f18b46d3b78a0a20088dc794
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1730102787852
+status: 3
+tags: []
+user_id: josephobukofe
