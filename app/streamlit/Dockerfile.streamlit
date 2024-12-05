@@ -8,6 +8,8 @@ RUN pip install --default-timeout=100 --no-cache-dir poetry && poetry install --
 
 COPY . /app/streamlit/
 
-RUN chmod +x app.sh
+COPY app/streamlit/app.sh /app/streamlit/app.sh
+
+RUN chmod +x /app/streamlit/app.sh
 
 CMD ["bash", "app.sh"]

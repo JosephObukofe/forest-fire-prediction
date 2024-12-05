@@ -29,6 +29,7 @@ services:
     networks:
       - predicting_forest_fires_app_network
     command: redis-server \
+      --port "$REDIS_PORT" \
       --requirepass "${REDIS_DB_PASSWORD}" \
       --bind 127.0.0.1
 
@@ -38,10 +39,10 @@ services:
     environment:
       - MLFLOW_TRACKING_URI=http://127.0.0.1:5000
     ports:
-      - "5000:5000"
+      - "5001:5000"
     volumes:
-      - /mlruns:/mlruns
-      - /mlartifacts:/mlartifacts
+      - ./mlruns:/mlruns
+      - ./mlartifacts:/mlartifacts
     networks:
       - predicting_forest_fires_app_network
     command: mlflow server \

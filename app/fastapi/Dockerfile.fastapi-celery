@@ -8,8 +8,10 @@ RUN pip install --default-timeout=100 --no-cache-dir poetry && poetry install --
 
 COPY . /app/fastapi/
 
+COPY app/fastapi/app.sh /app/fastapi/app.sh
+
 EXPOSE 8001
 
-RUN chmod +x app.sh
+RUN chmod +x /app/fastapi/app.sh
 
 CMD ["bash", "app.sh"]
