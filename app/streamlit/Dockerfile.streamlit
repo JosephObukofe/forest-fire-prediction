@@ -6,7 +6,9 @@ COPY pyproject.toml poetry.lock /app/streamlit/
 
 RUN pip install --default-timeout=100 --no-cache-dir poetry && poetry install --no-root --only main
 
-COPY . /app/streamlit/
+COPY app /app/streamlit/
+
+COPY .env /app/streamlit/
 
 COPY app/streamlit/app.sh /app/streamlit/app.sh
 
