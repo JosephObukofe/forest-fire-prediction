@@ -6,12 +6,16 @@ COPY pyproject.toml poetry.lock /app/fastapi/
 
 RUN pip install --default-timeout=100 --no-cache-dir poetry && poetry install --no-root --only main
 
-COPY . /app/fastapi/
+COPY .env /app/fastapi/
+
+COPY predicting_forest_fires/config /app/fastapi/
+
+COPY app /app/fastapi/
 
 COPY app/fastapi/app.sh /app/fastapi/app.sh
 
-EXPOSE 8001
-
 RUN chmod +x /app/fastapi/app.sh
+
+EXPOSE 8001
 
 CMD ["bash", "app.sh"]
