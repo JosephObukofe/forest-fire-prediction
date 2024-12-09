@@ -10,7 +10,7 @@ COPY .env /app/streamlit/
 
 COPY predicting_forest_fires/config /app/streamlit/
 
-COPY app /app/streamlit/
+COPY app/streamlit /app/streamlit/
 
 COPY app/streamlit/app.sh /app/streamlit/app.sh
 
