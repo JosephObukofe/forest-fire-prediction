@@ -1,0 +1,23 @@
+FROM python:3.12
+
+WORKDIR /app
+
+COPY pyproject.toml poetry.lock ./
+
+RUN pip install --default-timeout=100 --no-cache-dir poetry && poetry install --no-root --only main
+
+COPY .env /app/.env
+
+COPY predicting_forest_fires/config /app/config/
+
+COPY app /app/
+
+COPY app/predict.py app/pubsub.py app/schema.py /app/
+
+ENV PYTHONPATH=/app
+
+RUN chmod +x /app/app_main/app.sh
+
+EXPOSE 8001
+
+CMD ["bash", "/app/app_main/app.sh"]
