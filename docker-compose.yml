@@ -16,6 +16,11 @@ services:
     networks:
       - predicting_forest_fires_app_network
     command: minio server /data --address ":9278" > /dev/null 2>&1
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:9278/minio/health/live"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     
   redis:
     image: redis:alpine3.20
@@ -28,34 +33,38 @@ services:
       - "${REDIS_PORT}:6379"
     networks:
       - predicting_forest_fires_app_network
-    command: redis-server \
-      --port "$REDIS_PORT" \
-      --requirepass "${REDIS_DB_PASSWORD}" \
-      --bind 127.0.0.1
+    command: redis-server --requirepass "${REDIS_DB_PASSWORD}" --bind 0.0.0.0
+    healthcheck:
+      test: ["CMD", "redis-cli", "-h", "localhost", "-p", "6379", "-a", "${REDIS_DB_PASSWORD}", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   mlflow:
-    image: bitnami/mlflow:latest
+    image: ghcr.io/mlflow/mlflow:latest
     container_name: mlflow
     environment:
-      - MLFLOW_TRACKING_URI=http://127.0.0.1:5000
+      - MLFLOW_TRACKING_URI=http://0.0.0.0:5001
+      - MLFLOW_BACKEND_STORE_URI=sqlite:///mlflow.db
+      - MLFLOW_DEFAULT_ARTIFACT_ROOT=/mlartifacts
     ports:
-      - "5001:5000"
+      - "5001:5001"
     volumes:
       - ./mlruns:/mlruns
       - ./mlartifacts:/mlartifacts
+      - ./mlflow.db:/mlflow.db
     networks:
       - predicting_forest_fires_app_network
-    command: mlflow server \
-      --backend-store-uri /mlruns \
-      --default-artifact-root /mlartifacts \
-      --host 127.0.0.1 \
-      --port 5000
+    command: mlflow server --host 0.0.0.0 --port 5001
+    healthcheck:
+      disable: true
 
   fastapi:
     build:
       context: .
-      dockerfile: ./app/fastapi/Dockerfile.fastapi-celery
+      dockerfile: app/app_main/Dockerfile.fastapi-celery
     container_name: fastapi
+    working_dir: /app/app_main
     environment:
       - REDIS_PORT=${REDIS_PORT}
       - REDIS_HOST_NAME=${REDIS_HOST_NAME}
@@ -65,24 +74,27 @@ services:
     networks:
       - predicting_forest_fires_app_network
     depends_on:
-      - minio
-      - redis
-      - mlflow
-    command: bash app.sh
+      minio:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      mlflow:
+        condition: service_started
 
   streamlit:
     build:
       context: .
-      dockerfile: ./app/streamlit/Dockerfile.streamlit
+      dockerfile: app/streamlit/Dockerfile.streamlit
     container_name: streamlit
+    working_dir: /app/streamlit
     ports:
       - "8501:8501"
     networks:
       - predicting_forest_fires_app_network
     depends_on:
-      - fastapi
-    command: bash app.sh
-   
+      fastapi:
+        condition: service_started
+
 networks:
   predicting_forest_fires_app_network:
     driver: bridge
