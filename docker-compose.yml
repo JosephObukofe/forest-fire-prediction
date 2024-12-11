@@ -64,7 +64,6 @@ services:
       context: .
       dockerfile: app/app_main/Dockerfile.fastapi-celery
     container_name: fastapi
-    working_dir: /app/app_main
     environment:
       - REDIS_PORT=${REDIS_PORT}
       - REDIS_HOST_NAME=${REDIS_HOST_NAME}
@@ -86,7 +85,6 @@ services:
       context: .
       dockerfile: app/streamlit/Dockerfile.streamlit
     container_name: streamlit
-    working_dir: /app/streamlit
     ports:
       - "8501:8501"
     networks:
